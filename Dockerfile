@@ -15,23 +15,9 @@ RUN \
   apt-get install -y net-tools memcached curl git htop man unzip vim wget
 RUN apt-get install -y --no-install-recommends --no-install-suggests supervisor cron
 
-#RUN useradd -ms /bin/bash elearning
-#RUN mkdir /home/elearning/moodle
-#RUN chown -R elearning:elearning /home/elearning/moodle
-COPY config/cronmoodle /etc/cron.d/cronmoodle
-RUN chmod 644 /etc/cron.d/cronmoodle
-RUN crontab /etc/cron.d/cronmoodle
-RUN mkdir /var/www/localcache
-RUN chown -R www-data:www-data /var/www/localcache
-
 WORKDIR /var/www/html
 COPY sites .
 RUN chown -R www-data:www-data .
-#RUN mkdir /var/www/html/localcache
-#RUN chown www-data:www-data /var/www/html/localcache
-RUN mkdir /var/data
-RUN chmod 777 -R /var/data
-#RUN chown -R www-data:www-data /var/data
 
 WORKDIR /
 RUN mkdir -p /run/php
