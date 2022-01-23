@@ -1,0 +1,4 @@
+commonLabels:
+  app: nginx
+resources:
+- config/deployment.yml
