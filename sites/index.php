@@ -1,7 +1,7 @@
 <?php 
 print "<br>";
 print "Lets Try AWS Lightsail container version on this Course <br>";
-print "Change the Code";
+print "Change the Code version 2";
 //echo $_SERVER['PHP_SELF'];
 echo "<br>";
 echo $_SERVER['SERVER_NAME'];
